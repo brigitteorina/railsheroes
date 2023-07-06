@@ -25,4 +25,11 @@ class PowersController < ApplicationController
           render json: { error: "Power not found" }, status: :not_found
         end
       end
+
+      private
+
+  def power_params
+    params.require(:power).permit(:description)
+  end
+  
 end
